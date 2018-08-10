@@ -2,9 +2,6 @@
   <div>
     <h4>Add New Customer</h4>
     <form class='center_div' @submit.prevent>
-      <div class="input-group">
-          <input id="email" type="text" class="form-control" v-model="newUser.id" placeholder="id">
-        </div>
         <div class="input-group">
           <input id="email" type="text" class="form-control" v-model="newUser.firstName" placeholder="Firsname">
         </div>
@@ -14,7 +11,8 @@
        <div class="input-group">
           <input id="email" type="text" class="form-control" v-model="newUser.email"  placeholder="Email">
         </div>
-        <button @click='addCustomer'>Add Customer</button>
+        <button @click='addCustomer' class='btn btn-success'>Add Customer</button>
+       
     </form>
 
 
@@ -24,6 +22,7 @@
       <p>Customer: {{customer.id}} {{customer.firstName}} {{customer.lastName}}</p>
       <p>Email: {{customer.email}}</p>
       <button class='btn btn-danger' @click='deleteCustomer(customer)'>Delete</button>
+       <router-link class='btn btn-success'  :to="{ name:'customersPurchas',  params: {id: customer.id}}">Latest Purchasesr</router-link>
     </div>
 
   </div>
@@ -38,7 +37,7 @@ export default {
     return {
       customers: customerService.list(),
       newUser: {
-        products: [],
+        
       }
     }
   },
@@ -51,7 +50,7 @@ export default {
       
      customerService.addCustomer(this.newUser)
       this.newUser = {
-        products: [],
+   
       }
       
     }

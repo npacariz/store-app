@@ -1,7 +1,7 @@
 const customers = [
 
     {
-        id:'001',
+        id:'1',
         firstName: 'Marko',
         lastName: 'Markovic' ,
         email: 'markomarkovic@gmail.com',
@@ -9,7 +9,7 @@ const customers = [
     },
 
     {
-        id:'002',
+        id:'2',
         firstName: 'Petar',
         lastName: 'Petrovic' ,
         email: 'petarpetrovic@gmail.com',
@@ -17,7 +17,7 @@ const customers = [
     },
 
     {
-        id:'003',
+        id:'3',
         firstName: 'Stefan',
         lastName: 'Stefanovic' ,
         email: 'stefanstefanovic@gmail.com',
@@ -25,7 +25,7 @@ const customers = [
     },
 
     {
-        id:'004',
+        id:'4',
         firstName: 'Joe',
         lastName: 'Doe' ,
         email: 'joedoe@gmail.com',
@@ -34,6 +34,7 @@ const customers = [
     
 ]
 
+let id = 5;
 
 
 class Customers {
@@ -49,9 +50,15 @@ class Customers {
 
 
     addCustomer(value) {
+        value.id = id
+        value.products = [],
         customers.push(value)
+        id++;
     }
 
+    singleCustomer(value) {
+       return customers.find(customer =>customer.id === value)
+    }
 
 }
 

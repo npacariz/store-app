@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>AppProducts</h1>
-    <div class="list-group" v-for='(product, index) in products' :key='index'>
+    <input type="text" placeholder="Serach products" v-model='search'>
+    <div class="list-group" v-for='(product, index) in filteredProducts' :key='index'>
       <p>Product: {{product.title}} , quantity: {{product.quantity}}</p>
     </div>
   </div>
@@ -14,8 +15,16 @@ export default {
   name: 'AppProducts',
   data(){
     return {
-    products: productsService.list()
-  }
+    products: productsService.list(),
+    search: '',
+    }
+  },
+  computed: {
+    filteredProducts() {
+      return this.products.filter(product => {
+         return product.title.match(this.search)
+      })
+    }
   } 
 }
 </script>

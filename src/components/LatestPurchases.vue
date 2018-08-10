@@ -4,10 +4,10 @@
         <div class="jumbotron">
             <h4>{{customer.firstName}} {{customer.lastName}} </h4> 
             <h5> {{customer.email}} </h5>
-
+            <h6>Latest Purchases:</h6>
             <ul>
                 <li v-for='(product, index) in customer.products' :key='index'>
-                    {{product.name}}
+                    {{product.title}}
                 </li>
             </ul>
             <router-link class='btn btn-success'  to='/customers'>Back</router-link>

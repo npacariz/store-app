@@ -60,6 +60,10 @@ class Customers {
        return customers.find(customer =>customer.id === value)
     }
 
+    addProduct(user, product) {
+        user.products.push(product);
+    }
+
 }
 
 

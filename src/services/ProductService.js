@@ -23,7 +23,7 @@ const products = [
     {
         id:'5',
         title: 'trenerka',
-        quantity: 20,
+        quantity: 0,
     },
 
     
@@ -46,6 +46,10 @@ class Products {
         }else if (operator === '-' && product.quantity>0) {
             product.quantity--
         }
+    }
+
+    singleProduct(value) {
+        return products.find(products =>products.id === value)
     }
 
     

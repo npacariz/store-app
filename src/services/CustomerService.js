@@ -9,7 +9,7 @@ const customers = [
     },
 
     {
-        id:'001',
+        id:'002',
         firstName: 'Petar',
         lastName: 'Petrovic' ,
         email: 'petarpetrovic@gmail.com',
@@ -17,7 +17,7 @@ const customers = [
     },
 
     {
-        id:'001',
+        id:'003',
         firstName: 'Stefan',
         lastName: 'Stefanovic' ,
         email: 'stefanstefanovic@gmail.com',
@@ -25,7 +25,7 @@ const customers = [
     },
 
     {
-        id:'001',
+        id:'004',
         firstName: 'Joe',
         lastName: 'Doe' ,
         email: 'joedoe@gmail.com',
@@ -45,6 +45,11 @@ class Customers {
     deleteCustomer(value) {
         let index = customers.indexOf(value)
         customers.splice(index, 1)
+    }
+
+
+    addCustomer(value) {
+        customers.push(value)
     }
 
 

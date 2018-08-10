@@ -40,6 +40,14 @@ class Products {
         return products
     }
 
+    manipulateProducts(product, operator) {
+        if(operator === '+') {
+            product.quantity++
+        }else if (operator === '-' && product.quantity>0) {
+            product.quantity--
+        }
+    }
+
     
 
 }

@@ -4,6 +4,7 @@
     <input type="text" placeholder="Serach products" v-model='search'>
     <div class="list-group" v-for='(product, index) in filteredProducts' :key='index'>
       <p>Product: {{product.title}} , quantity: {{product.quantity}}</p>
+      <button @click="manipulateProduct(product, '-')">-</button> <button @click="manipulateProduct(product, '+')">+</button>
     </div>
   </div>
 </template>
@@ -17,6 +18,11 @@ export default {
     return {
     products: productsService.list(),
     search: '',
+    }
+  },
+  methods: {
+    manipulateProduct(product, value){
+        productsService.manipulateProducts(product, value)
     }
   },
   computed: {

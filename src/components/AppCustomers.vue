@@ -12,7 +12,6 @@
           <input id="email" type="text" class="form-control" v-model="newUser.email"  placeholder="Email">
         </div>
         <button @click='addCustomer' class='btn btn-success'>Add Customer</button>
-       
     </form>
 
 
